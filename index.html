@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
+<body>
+<div class="container-fluid">
+<nav>
+	<ul>
+		<li><a href="/#/home">Home</a></li>
+		<li><a href="/#/submit">Submit A Question</a></li>
+		<li><a href="/#/vote">Vote on a Question</a></li>
+	</ul>
+</nav>
+</div>
+<div ng-view></div>	
+
+<!-- Angular -->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+
+<!-- Firebase -->
+<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+
+<!-- Scripts -->
+<script src="app.js"></script>
+<script src="controllers/HomeController.js"></script>
+<script src="controllers/SubmitController.js"></script>
+<script src="controllers/VoteController.js"></script>		
+	
+</body>
+</html>
