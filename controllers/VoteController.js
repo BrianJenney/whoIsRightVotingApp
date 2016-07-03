@@ -7,6 +7,13 @@ angular.module('myApp.vote', ['ngRoute'])
   });
 }])
 
-.controller('VoteCtrl', ['$scope',function($scope) {
+.controller('VoteCtrl', ['$scope', '$firebase', '$firebaseArray', function($scope, $firebase, $firebaseArray) {
  
+ 	var fb = new Firebase("https://questionvote.firebaseio.com/Questions");
+
+ 	$scope.question = $firebaseArray(fb);
+
+ 	console.log($scope.question);
+
+
  }]);

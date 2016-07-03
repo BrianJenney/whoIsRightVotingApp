@@ -1,6 +1,7 @@
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
+  'ui.bootstrap',
   'firebase',
   'ngRoute',
   'myApp.home',
@@ -8,7 +9,7 @@ angular.module('myApp', [
   'myApp.vote'
 
 ]).
-config(['$routeProvider', function($routeProvider) {
+config(['$routeProvider', function($routeProvider,$locationProvider) {
   $routeProvider.otherwise({redirectTo: '/home'});
 }]);
 

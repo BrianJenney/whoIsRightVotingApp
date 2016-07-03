@@ -7,10 +7,10 @@ angular.module('myApp.submit', ['ngRoute','firebase'])
   });
 }])
 
-.controller('SubmitCtrl', ['$scope', '$firebase', function($scope,$firebase) {
+.controller('SubmitCtrl', ['$scope', '$firebase', '$location', function($scope,$firebase, $location) {
 
 
-	var url = "https://questionvote.firebaseio.com/"
+	var url = "https://questionvote.firebaseio.com/Questions"
 
 	$scope.submitQuestion = function(){
 		var fb = new Firebase(url)
@@ -22,8 +22,13 @@ angular.module('myApp.submit', ['ngRoute','firebase'])
 
 		$scope.question.text = "";
 		$scope.question.parameterOne = "";
-		$scope.question.parameterTwo =""
+		$scope.question.parameterTwo ="";
+
+		$location.path('/vote');
 
 	}
+
+	
+
  
  }]);
