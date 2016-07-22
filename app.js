@@ -6,7 +6,8 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.home',
   'myApp.submit',
-  'myApp.vote'
+  'myApp.vote',
+  'myApp.login'
 
 ]).
 config(['$routeProvider', function($routeProvider,$locationProvider) {
