@@ -7,7 +7,8 @@ angular.module('myApp', [
   'myApp.home',
   'myApp.submit',
   'myApp.vote',
-  'myApp.login'
+  'myApp.login',
+  'myApp.createacct'
 
 ]).
 config(['$routeProvider', function($routeProvider,$locationProvider) {
