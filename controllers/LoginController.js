@@ -7,7 +7,7 @@ angular.module('myApp.login', ['ngRoute'])
   });
 }])
 
-.controller('LoginCtrl', ['$scope','$location',function($scope, $location) {
+.controller('LoginCtrl', ['$scope','$window',function($scope, $window) {
  $scope.signIn = true;
 
 $scope.loginUser = function(){
@@ -22,10 +22,16 @@ $scope.loginUser = function(){
 	    console.log("Login Failed!", error);
 
 	  } else {
-	    console.log("Authenticated successfully with payload:", authData);
-	    $location.path('/submit')
+	  	$window.location.href = '/#/submit';
+	    
 	  }
 });
 
 }
+
+$scope.test = function(){
+		console.log("test");
+		$location.path('/submit');
+	}
+
  }]);

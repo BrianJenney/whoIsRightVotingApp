@@ -7,7 +7,7 @@ angular.module('myApp.createacct', ['ngRoute'])
   });
 }])
 
-.controller('CreateAcctCtrl', ['$scope', '$location', function($scope, $location) {
+.controller('CreateAcctCtrl', ['$scope', '$window', function($scope, $window) {
  $scope.signIn = true;
 
 $scope.createUser = function(){
@@ -19,10 +19,10 @@ $scope.createUser = function(){
 	  if (error) {
 	    console.log("Error creating user:", error);
 	  } else {
-	    console.log("Successfully created user account with uid:", userData.uid);
-	    console.log("hey");
+
 	    //direct user to vote page
-		$location.path('/login');
+	    $window.location.href = '/#/login'
+	    console.log('yep')
 
 	  }
 	});

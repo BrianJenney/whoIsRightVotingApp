@@ -1,12 +1,6 @@
 <section ng-control="LoginCtrl">
 <div class="container-fluid">
-<nav>
-	<ul>
-		<li><a href="/#/home">Home</a></li>
-		<li><a href="/#/submit">Submit A Question</a></li>
-		<li><a href="/#/vote">Vote on a Question</a></li>
-	</ul>
-</nav>
+
 </div>
 <!-- login form -->
 <div class="row" ng-show="signIn">
@@ -23,6 +17,7 @@
 		  </div>
 		  <span ng-show="!signIn"class="danger">Please sign up for an account</span>
 		  <button ng-disabled="!userPassword || !userEmail"ng-click="loginUser()" class="btn btn-primary">Sign In</button>
+		
 		</form>	
 	</div>
 	
