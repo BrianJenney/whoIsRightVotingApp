@@ -10,6 +10,16 @@
 <body>
 
 <div ng-view></div>	
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCIBEVRpk11XNVlweba8wW_Y9DPO_BmITw",
+    authDomain: "questionvote.firebaseapp.com",
+    databaseURL: "https://questionvote.firebaseio.com",
+    storageBucket: "questionvote.appspot.com",
+  };
+  firebase.initializeApp(config);
+</script>
 
 <!-- Angular -->
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
@@ -25,12 +35,17 @@
 <!-- AngularFire -->
 <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
 
+
+</body>
+
 <!-- Scripts -->
+<script src="index.js"></script>
 <script src="app.js"></script>
 <script src="controllers/HomeController.js"></script>
 <script src="controllers/SubmitController.js"></script>
 <script src="controllers/VoteController.js"></script>		
 <script src="controllers/LoginController.js"></script>
 <script src="controllers/CreateAcctController.js"></script>
-</body>
+<script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+
 </html>

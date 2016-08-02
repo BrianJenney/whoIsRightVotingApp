@@ -21,7 +21,8 @@ angular.module('myApp.submit', ['ngRoute','firebase'])
 			parameter2: $scope.question.parameterTwo,
 			vote1: 0,
 			vote2: 0,
-			voters:[]
+			voters:[],
+			email: $scope.question.email
 		})
 
 		//set input values back to blank

@@ -29,9 +29,12 @@
 
 		<label for="parameters">Side 2</label>
 		<input class="form-control" ng-model="question.parameterTwo" type="text"/>
+
+		<label for="parameters">Email</label>
+		<input class="form-control" ng-model="question.email" type="text"/>
 	</fieldset>
 </form> 
 	<div style="margin-top: 5%;" class="text-center">
-		<button ng-disabled="!question.text || !question.parameterOne || !question.parameterTwo"ng-click="submitQuestion()" class="btn btn-primary">Submit My Question</button>
+		<button ng-disabled="!question.text || !question.parameterOne || !question.parameterTwo || !question.email"ng-click="submitQuestion()" class="btn btn-primary">Submit My Question</button>
 	</div>
 </section>

@@ -26,7 +26,7 @@ angular.module('myApp.vote', ['ngRoute'])
  		//needs functionality to make sure same user can't vote more than once for the same question 
  		fb.$loaded().then(function(){
  			//get value of votes for param 1
- 			var newVoteTotal = fb[3].$value + 1;
+ 			var newVoteTotal = fb[4].$value + 1;
  			//update db with new vote total
  			console.log(newVoteTotal)
 
@@ -49,7 +49,7 @@ angular.module('myApp.vote', ['ngRoute'])
  		//needs functionality to make sure same user can't vote more than once for the same question 
  		fb.$loaded().then(function(){
  			//get value of votes for param 1
- 			var newVoteTotal = fb[4].$value + 1;
+ 			var newVoteTotal = fb[5].$value + 1;
  			//update db with new vote total
  			console.log(newVoteTotal)
 
