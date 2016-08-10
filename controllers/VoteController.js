@@ -8,7 +8,16 @@ angular.module('myApp.vote', ['ngRoute'])
 }])
 
 .controller('VoteCtrl', ['$scope', '$firebase', '$firebaseArray', '$firebaseObject', function($scope, $firebase, $firebaseArray, $firebaseObject) {
- 
+
+
+	var ref = new Firebase("https://questionvote.firebaseio.com/Questions/");
+	var authData = ref.getAuth();
+
+	if (authData) {
+	  console.log("Authenticated user with uid:", authData.uid);
+	  var voter = authData.uid;
+	}
+	 	
  	var fb = new Firebase("https://questionvote.firebaseio.com/Questions/");
 
 

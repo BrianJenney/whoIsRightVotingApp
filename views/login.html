@@ -15,7 +15,7 @@
 		    <label for="pwd">Password:</label>
 		    <input ng-model="userPassword" type="password" class="form-control" id="pwd">
 		  </div>
-		  <span ng-show="!signIn"class="danger">Please sign up for an account</span>
+		  <span ng-show="falseSignIn"class="danger">Please sign up for an account</span>
 		  <button ng-disabled="!userPassword || !userEmail"ng-click="loginUser()" class="btn btn-primary">Sign In</button>
 		
 		</form>	

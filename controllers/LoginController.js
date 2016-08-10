@@ -17,8 +17,8 @@ $scope.loginUser = function(){
 	  password : $scope.userPassword
 	}, function(error, authData) {
 	  if (error) {
-	  	$scope.sigIn= false;
-	    console.log($scope.sigIn);
+	  	$scope.falseSigIn = true;
+	    console.log($scope.falseSigIn);
 	    console.log("Login Failed!", error);
 
 	  } else {

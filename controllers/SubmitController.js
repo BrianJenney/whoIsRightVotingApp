@@ -8,8 +8,6 @@ angular.module('myApp.submit', ['ngRoute','firebase'])
 }])
 
 .controller('SubmitCtrl', ['$scope', '$firebase', '$location', function($scope,$firebase, $location) {
-
-
 	var url = "https://questionvote.firebaseio.com/Questions"
 
 	//function to submit questions
