@@ -10,6 +10,14 @@ angular.module('myApp.submit', ['ngRoute','firebase'])
 .controller('SubmitCtrl', ['$scope', '$firebase', '$location', function($scope,$firebase, $location) {
 	var url = "https://questionvote.firebaseio.com/Questions"
 
+	var ref = new Firebase("https://questionvote.firebaseio.com/Questions/");
+	var authData = ref.getAuth();
+	//get current user from login
+	//store in voters array
+	if (authData) {
+	  console.log("Authenticated user with uid:", authData.uid);
+	  var voter = authData.uid;
+	}
 	//function to submit questions
 	$scope.submitQuestion = function(){
 		var fb = new Firebase(url)
@@ -19,10 +27,11 @@ angular.module('myApp.submit', ['ngRoute','firebase'])
 			parameter2: $scope.question.parameterTwo,
 			vote1: 0,
 			vote2: 0,
-			voters:[],
+			voters:[voter],
 			email: $scope.question.email
 		})
 
+		console.log('yeah')
 		//set input values back to blank
 		$scope.question.text = "";
 		$scope.question.parameterOne = "";

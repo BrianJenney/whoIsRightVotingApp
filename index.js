@@ -13,7 +13,7 @@ firebase.initializeApp(ref);
 var rootRef = firebase.database().ref();
 
 var now = Date.now();
-var cutoff = now - 60 * 60 * 1000;
+var cutoff = now - 24 * 60 * 60 * 1000;
 
 var old = rootRef.orderByChild('timestamp').endAt(cutoff)
 //initialize array to hold data from snapshot

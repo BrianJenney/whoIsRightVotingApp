@@ -7,7 +7,7 @@ angular.module('myApp.login', ['ngRoute'])
   });
 }])
 
-.controller('LoginCtrl', ['$scope','$window',function($scope, $window) {
+.controller('LoginCtrl', ['$scope','$window','$timeout',function($scope, $window, $timeout) {
  $scope.signIn = true;
 
 $scope.loginUser = function(){
@@ -16,22 +16,20 @@ $scope.loginUser = function(){
 	  email    : $scope.userEmail,
 	  password : $scope.userPassword
 	}, function(error, authData) {
-	  if (error) {
-	  	$scope.falseSigIn = true;
-	    console.log($scope.falseSigIn);
+	  $timeout(function(){
+	  	if (error) {
+	  	$scope.errorMessage = true;
 	    console.log("Login Failed!", error);
 
 	  } else {
 	  	$window.location.href = '/#/submit';
 	    
 	  }
+	})
 });
 
 }
 
-$scope.test = function(){
-		console.log("test");
-		$location.path('/submit');
-	}
+
 
  }]);

@@ -5,7 +5,10 @@
 <!-- login form -->
 <div class="row" ng-show="signIn">
 	<div class="col-md-4 col-md-offset-4">
+	<div class="text-center">
 	<a class="text-right" href="/#/createacct">Sign up for an acccount</a>
+	</div>
+	<br>
 		<form role="form">
 		  <div class="form-group">
 		    <label for="email">Email address:</label>
@@ -15,8 +18,10 @@
 		    <label for="pwd">Password:</label>
 		    <input ng-model="userPassword" type="password" class="form-control" id="pwd">
 		  </div>
-		  <span ng-show="falseSignIn"class="danger">Please sign up for an account</span>
+		  <div class="text-center">
+		  <span style="padding:5px !important" ng-show="errorMessage" class="alert alert-danger">Please sign up for an account</span><br><br>
 		  <button ng-disabled="!userPassword || !userEmail"ng-click="loginUser()" class="btn btn-primary">Sign In</button>
+		  </div>
 		
 		</form>	
 	</div>
