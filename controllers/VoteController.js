@@ -11,8 +11,10 @@ angular.module('myApp.vote', ['ngRoute'])
 
 
 	var ref = new Firebase("https://questionvote.firebaseio.com/Questions/");
-	var authData = ref.getAuth();
+
 	//get current user from login
+	var authData = ref.getAuth();
+
 	if (authData) {
 	  console.log("Authenticated user with uid:", authData.uid);
 	  var currentUser = authData.uid;
@@ -23,7 +25,19 @@ angular.module('myApp.vote', ['ngRoute'])
  	//if user has voted match will be set to true
  	var match = false;
  	var voterArray = []
+
+ 	//get questions for ng-array
  	$scope.question = $firebaseArray(fb);
+
+ 	$scope.question_index = 0;
+
+ 	$scope.next = function(){
+ 		if($scope.question_index >= $scope.question.length - 1){
+ 			$scope.question_index = 0;
+ 		}else{
+ 			$scope.question_index++
+ 		}
+ 	}
 
  	//vote for side one function
  	$scope.voteSideOne = function(id){
