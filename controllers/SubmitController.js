@@ -28,10 +28,11 @@ angular.module('myApp.submit', ['ngRoute','firebase'])
 			vote1: 0,
 			vote2: 0,
 			voters:[voter],
-			email: $scope.question.email
+			email: $scope.question.email,
+			timestamp: Firebase.ServerValue.TIMESTAMP
+
 		})
 
-		console.log('yeah')
 		//set input values back to blank
 		$scope.question.text = "";
 		$scope.question.parameterOne = "";

@@ -7,23 +7,28 @@ var ref = {
     storageBucket: "questionvote.appspot.com",
   };
 
+//initialize array to store winner data
 var winner = [];
 firebase.initializeApp(ref);
 
 var rootRef = firebase.database().ref();
-
+//get all data older than 24 hours
 var now = Date.now();
-var cutoff = now - 24 * 60 * 60 * 1000;
+var cutoff = now - 72 * 60 * 60 * 1000;
+var old = rootRef.orderByChild('timestamp').endAt(cutoff).limitToLast(1);
 
-var old = rootRef.orderByChild('timestamp').endAt(cutoff)
-//initialize array to hold data from snapshot
-
-
-var listener = rootRef.on('child_added', function(snapshot) {
+var listener = old.on('value', function(snapshot) {
 
 snapshot.forEach(function(childSnapshot){
     var child = childSnapshot.val();
-    
+    console.log(child)
+
+    //get value of nested array in child
+    for(var prop in child){
+        console.log(child[prop])
+        child = child[prop];
+    }
+
     if(child.vote1 - child.vote2 > 0){
         winner.push({email:child.email, winner:child.parameter1})
     }else if(child.vote1 - child.vote2 < 0){
@@ -31,12 +36,14 @@ snapshot.forEach(function(childSnapshot){
     }else{
         winner.push({'email':child.email, winner:'It is a tie!'})
     }
-
+    
 })
 //create reusable transporter object using the default SMTP transport
-//console.log(winner)
+
+
 for(x=0; x<winner.length; x++){
 
+//console.log(winner.length + " Tis is the length")
 
 var transporter = nodemailer.createTransport({
     service: 'Gmail',
@@ -58,10 +65,11 @@ var mailOptions = {
 // send mail with defined transport object
 transporter.sendMail(mailOptions, function(error, info){
     if(error){
-        return console.log(error);
+        return console.log('error');
     }
     console.log('Message sent: ' + info.response);
 });
+
 }
 
 
