@@ -29,7 +29,7 @@ angular.module('myApp.submit', ['ngRoute','firebase'])
 			vote2: 0,
 			voters:[voter],
 			email: $scope.question.email,
-			timestamp: Firebase.ServerValue.TIMESTAMP
+			timestamp: Date.now()
 
 		})
 

@@ -74,8 +74,9 @@ angular.module('myApp.vote', ['ngRoute'])
      	voters.push(currentUser)
 
  		fb.$loaded().then(function(){
+            console.log(fb[6].$value + 1)
  			//get value of votes for param 1
- 			var newVoteTotal = fb[4].$value + 1;
+ 			var newVoteTotal = fb[6].$value + 1;
  			//update db with new vote total
  			vote.update({
  				vote1: newVoteTotal
@@ -117,12 +118,11 @@ angular.module('myApp.vote', ['ngRoute'])
  		}
 
         
-        if(match == false){
+        if(match == true){
  		fb.$loaded().then(function(){
  			//get value of votes for param 1
  			var newVoteTotal = fb[5].$value + 1;
  			//update db with new vote total
-
  			vote.update({
  				vote2: newVoteTotal
  			})
