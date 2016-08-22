@@ -118,7 +118,7 @@ angular.module('myApp.vote', ['ngRoute'])
  		}
 
         
-        if(match == true){
+        if(match == false){
  		fb.$loaded().then(function(){
  			//get value of votes for param 1
  			var newVoteTotal = fb[5].$value + 1;
