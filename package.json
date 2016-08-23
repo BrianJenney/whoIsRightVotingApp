@@ -2,15 +2,19 @@
   "name": "votingapp",
   "version": "1.0.0",
   "description": "Sometimes I just want a simple Angular Starter Template instead of a million dependencies and npm packages.",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BrianJenney/whoIsRightVotingApp.git"
   },
-  "author": "",
+  "author": "Brian Jenney",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/BrianJenney/whoIsRightVotingApp/issues"
