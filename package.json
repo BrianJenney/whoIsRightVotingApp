@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/BrianJenney/whoIsRightVotingApp#readme",
   "dependencies": {
+    "express": "^4.14.0",
     "firebase": "^3.2.1"
   }
 }
