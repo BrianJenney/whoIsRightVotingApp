@@ -41,8 +41,48 @@ angular.module('myApp.submit', ['ngRoute','firebase'])
 		//direct user to vote page
 		$location.path('/vote');
 
-	}
+}
+//*******************************
+// HOW TO STORE FILES TO FIREBASE
+//*******************************
 
+
+		 // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCIBEVRpk11XNVlweba8wW_Y9DPO_BmITw",
+    authDomain: "questionvote.firebaseapp.com",
+    databaseURL: "https://questionvote.firebaseio.com",
+    storageBucket: "questionvote.appspot.com",
+  };
+  firebase.initializeApp(config);
+
+
+$scope.previewFile = function(){
+  console.log("working")
+  var storage = firebase.storage();
+
+  var file = document.getElementById("files").files[0];
+    console.log(file);
+  
+  var storageRef = firebase.storage().ref();
+
+  var thisRef = storageRef.child(file.name);
+
+  
+  thisRef.put(file).then(function(snapshot) {
+    console.log('Uploaded a blob or file!');
+});
+
+//retrieve firebase url for uploaded file
+thisRef.getDownloadURL().then(function(url) {
+console.log(url)
+})
+  
+  
+}
+
+
+	
 	
 
  

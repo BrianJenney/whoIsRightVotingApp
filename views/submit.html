@@ -38,4 +38,8 @@
 	<div style="margin-top: 5%;" class="text-center">
 		<button ng-disabled="!question.text || !question.parameterOne || !question.parameterTwo || !question.email"ng-click="submitQuestion()" class="btn btn-primary">Submit My Question</button>
 	</div>
+
+	<!-- HOW TO SUBMIT FILES TO FIREBASE -->
+  <input type="file" ng-model="files" ng-change="previewFile()" id="files" name="files[]" multiple />
+  <button ng-click="previewFile()">Click</button>
 </section>
